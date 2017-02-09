@@ -1,0 +1,1347 @@
+@charset "utf-8";
+/*
+ *reset部分 
+ * flexible.js里也有，部分重复
+ * 初始化
+ */
+:focus {
+	outline: 0;
+}
+a{
+	display: block;
+	overflow: hidden;
+	text-decoration: none;
+	text-align: inherit;
+	color: inherit;
+	border: 0;
+	cursor: pointer;
+}
+a:visited{
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: none;
+}
+a:active{
+	text-decoration: none;
+}
+a.a-inline{
+	display: inline;
+}
+
+.tc{
+	text-align: center;
+}
+.hid{
+	overflow: hidden;
+}
+.sl{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.ab-center{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	text-align: center;
+}
+
+input{
+	outline: none;
+}
+input[type="text"],input[type="password"]{
+	-webkit-appearance: none;/*解决苹果机上input的内阴影*/
+}
+
+/*
+ *body部分 
+ * */
+body{
+	max-width: 7.5rem;
+	margin: 0 auto;
+	padding: 0.96rem 0 0;
+	box-sizing: border-box;
+	background-color: white;
+	overflow: hidden;
+}
+
+/*
+ *
+ * 自定义的字体引用
+ *  
+ * */
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?smj7ux');
+  src:  url('../fonts/icomoon.eot?smj7ux#iefix') format('embedded-opentype'),
+url('../fonts/icomoon.ttf?smj7ux') format('truetype'),
+url('../fonts/icomoon.woff?smj7ux') format('woff'),
+url('../fonts/icomoon.svg?smj7ux#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/**
+ * 列表加载效果样式
+ */
+.l_botjz {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 10px;
+    line-height: 0.6rem;
+    text-align: center;
+    font-size: 0.3rem;
+    color: #808080;
+}
+
+.l_botjz span:nth-child(2) {
+    display: none;
+}
+
+.l_botjz.l_loading span:nth-child(1) {
+    display: none;
+}
+
+.l_botjz.l_loading span:nth-child(2) {
+    display: inherit;
+}
+
+/*
+ *header部分 
+ * 
+ * */
+header{
+	height: 0.96rem;
+	width: 7.5rem;
+	position: fixed;
+	z-index: 98;
+	top: 0;
+	background-color: white;
+	overflow: hidden;
+	box-sizing: border-box;
+	border-bottom: 1px solid #ccc;
+}
+
+header>span,
+header>a {
+	text-align: center;
+	line-height: 0.96rem;
+	height: 0.96rem;
+	position: absolute;
+	top: 0;
+	color: #a5a5a5;
+}
+header>span.header-title{
+	width: 5.6rem;
+	color: #ef4a48;
+    left: 50%;
+    margin-left: -2.8rem;
+    font-size: 0.46rem;
+    z-index: -2;
+}
+header>a.header-back {
+	padding-left: 0.1rem;
+	left: 0;
+	font-size: 0.46rem;
+}
+
+header>a.header-back::before {
+	font-family: "icomoon";
+content: "\e90f";
+}
+header>a.header-text-right{
+	padding-right: 0.32rem;
+	right: 0;
+	font-size: 0.32rem;
+}
+
+/*主页里的header部分*/
+header>.header-logo{
+	padding-left: 0.1rem;
+	left: 0;
+}
+header>.header-logo>img{
+	width: 1.14rem;
+	height: 0.7rem;
+	position: relative;
+	top: 0.13rem;
+}
+header>.header-icon-right{
+	padding: 0 0.1rem;
+	right: 0;
+	font-size: 0.46rem;
+	cursor: pointer;
+}
+header>.header-icon-right::after{
+	font-family: "icomoon";
+}
+header>.header-icon-right2{
+	padding: 0 0.1rem;
+	right: 0.82rem;
+	font-size: 0.46rem;
+	cursor: pointer;
+}
+
+header>.header-mulu::after{
+	content: "\e926";
+}
+header>.header-mulu.header-mulu-active::after{
+	content: "\e900";
+}
+header>.header-home::after{
+	content: "\e92a";
+}
+/*header>.header-fenxiang::after{
+	font-family: "icomoon";
+content: "\e907";
+}*/
+/*header>.header-shoucang::after{
+	font-family: "icomoon";
+content: "\e90d";
+}*/
+/*header>.header-shoucang.header-shoucang-active::after{
+	content: "\e911";
+	color: #ef4a48;
+}*/
+
+header>input.header-search{
+	width: 6.08rem;
+	height: 0.62rem;
+	font-size: 0.28rem;
+	text-indent: 1em;
+	color: #a3a3a3;
+	background-color: #f1f1f1;
+	border: 1px solid #dbdbdb;
+	border-radius: 0.23rem;
+	position: absolute;
+	top: 50%;
+	left: 0.71rem;
+	margin-top: -0.31rem;
+}
+
+header>.header-search-icon{
+	padding: 0 0.1rem;
+	position: absolute;
+	top: 0;
+	right: 0.71rem;
+}
+header>.header-search-icon::after{
+	font-family: "icomoon";
+font-size: 0.46rem;
+content: "\e922";
+	color: #a3a3a3;
+	
+}
+.shouye-header>input.header-search{
+	width: 5.4rem;
+	left: 1.39rem;
+}
+.shouye-header>.header-mulu{
+	color: #e71218;
+}
+/*注册登录相关的header-back*/
+.zcdl-header>a.header-back{
+	padding-left: 0.32rem;
+}
+
+/*
+ * 
+ *footer部分 
+ * 
+ * */
+
+footer{
+	box-sizing: border-box;
+	width: 7.5rem;
+	height: 0.96rem;
+	padding-left: 0.28rem;
+	position: fixed;
+	bottom: 0;
+	background-color: white;
+	border-top: 1px solid #e3e3e3;
+	z-index: 10;
+}
+
+footer>a{
+	width: 1.7rem;
+	height: 100%;
+	float: left;
+	text-align: center;
+	text-decoration: none!important;
+	box-sizing: border-box;
+	color: #acacac;
+}
+footer>a.footer-a-active{
+	color: #f63049;
+}
+
+footer>a::before{
+	font-family: "icomoon";
+	font-size: 0.5rem;
+	line-height: 0.6rem;
+}
+
+footer>a:nth-of-type(1)::before{
+	content: "\e92a";
+}
+footer>a:nth-of-type(2)::before{
+	content: "\e91f";
+}
+footer>a:nth-of-type(3)::before{
+	content: "\e904";
+}
+footer>a:nth-of-type(4)::before{
+	content: "\e927";
+}
+
+footer>a>p{
+	width: 100%;
+	font-size: 0.24rem;
+	line-height: 0.36rem;
+}
+
+.footer-cheng{
+	clear: both;
+	width: 100%;
+	height: 0.96rem;
+	background-color: white;
+}
+
+/*
+ * 
+ * 
+ *没有找到相关内容 
+ * 
+ * 
+ * */
+div.no-product{
+	padding: 1.76rem 0 0.24rem 0.86rem;
+	display: none;
+}
+div.no-product>img{
+	width: 1.8rem;
+	height: 2.48rem;
+	float: left;
+}
+div.no-product>p{
+	padding-left: 0.54rem;
+	line-height: 2.48rem;
+	font-size: 0.32rem;
+	color: #a5a5a5;
+	float: left;
+}
+
+.load-img {display: block;background: url(../img/lazyload.gif) no-repeat center center;border-radius: 3px 3px 0px 0px;}
+
+/*
+ *加号的下拉列表 
+ * 
+ * */
+.jia{
+	background-color: rgba(224,229,232,.8);
+	width: 2.5rem;
+	position: fixed;
+	right: 0.1rem;
+	top: 0.96rem;
+	z-index: 11;
+	box-shadow: 0.1rem 0.1rem 0.2rem 0 rgba(126,124,124,.8);
+	display: none;
+}
+.jia>a{
+	line-height: 0.76rem;
+	font-size: 0.32rem;
+	box-sizing: border-box;
+	border-top: 1px solid rgba(192,192,192,.8);
+	color: #565656;
+}
+.jia>a:before{
+	font-family: "icomoon";
+	padding-left: 0.34rem;
+	padding-right: 0.24rem;
+	vertical-align: middle;
+}
+.jia>a.jia-zc::before{
+	content: "\e929";
+}
+.jia>a.jia-dl::before{
+	content: "\e90a";
+}
+.jia>a.jia-sys::before{
+	content: "\e928";
+}
+.jia>a.jia-sc::before{
+	content: "\e90d";
+}
+.jia>a.jia-sc.jia-sc-active::before{
+	content: "\e911";
+	color: #ef4a48;
+}
+.jia>a.jia-fx::before{
+	content: "\e907";
+}
+.jia>a.jia-zy::before{
+	content: "\e92a";
+}
+
+/*二维码部分*/
+.erweima-lg{
+	width: 7.5rem;
+	height: 100%;
+	background-color: rgba(33,33,33,0.5);
+	position: fixed;
+	z-index: 99;
+	/*left: 0;*/
+	top: 0;
+	display: none;
+}
+.erweima-lg>img{
+	display: block;
+	width: 4.95rem;
+	height: 4.95rem;
+}
+
+/*
+ * 
+ *list-main部分的公共样式 
+ * 
+ * 
+ * */
+a.list-main-kuai{
+	overflow: hidden;
+	width: 7.45rem;
+	box-sizing: border-box;
+	margin-bottom: 0.15rem;
+	padding-left: 0.05rem;
+	box-shadow: 2px 2px 3px 0px rgba(0,0,0,.2);
+}
+a.list-main-kuai>img{
+	float: left;
+	width: 7.4rem;
+	height: 3.06rem;
+	object-fit: cover;
+}
+a.list-main-kuai>p{
+	overflow: hidden;
+	width: 100%;
+	line-height: 0.74rem;
+	overflow: hidden;
+	color: #a5a5a5;
+}
+a.list-main-kuai>p>span:nth-of-type(1){
+	float: left;
+	padding-left: 0.15rem;
+	font-size: 0.36rem;
+}
+a.list-main-kuai>p>span:nth-of-type(2){
+	float: right;
+	padding-right: 0.2rem;
+	font-size: 0.28rem;
+}
+a.list-main-kuai>p>span:nth-of-type(2)::before{
+	font-family: "icomoon";
+	content: "\e92b";
+	padding-right: 0.05rem;
+}
+
+/*
+ * 
+ *list-taocan里的公共部分 
+ * 
+ * 
+ * */
+div.list-taocan-title-pic{
+	/*margin-bottom: -0.6rem;*/
+	margin-bottom: -1.52rem;
+}
+div.list-taocan-title-pic>img{
+	float: left;
+	width: 7.5rem;
+	height: 4.98rem;
+	object-fit: cover;
+}
+div.list-taocan{
+	position: relative;
+	z-index: 2;
+}
+a.list-taocan-kuai{
+	overflow: hidden;
+	width: 6.92rem;
+	margin: 0 auto 0.26rem;
+	height: 2.38rem;
+	border-radius: 0.1rem;
+	box-shadow: 2px 2px 3px 2px rgba(0,0,0,.2);
+	background-color: white;
+	position: relative;
+	z-index: 10;
+}
+a.list-taocan-kuai>div{
+	float: left;
+	background-color: white;
+}
+a.list-taocan-kuai>div:nth-of-type(1){
+	width: 2.12rem;
+	box-sizing: border-box;
+	padding-top: 0.26rem;
+	padding-left: 0.08rem;
+}
+a.list-taocan-kuai>div:nth-of-type(2){
+	width: 1.92rem;
+	padding-top: 0.56rem;
+	padding-right: 0.6rem;
+}
+a.list-taocan-kuai>div:nth-of-type(3){
+	width: 1.84rem;
+	padding-top: 0.6rem;
+	padding-right: 0.42rem;
+}
+a.list-taocan-kuai>div:nth-of-type(1)>img{
+	float: left;
+	width: 1.82rem;
+	height: 1.82rem;
+	border-radius: 50%;
+	object-fit: cover;
+}
+a.list-taocan-kuai>div:nth-of-type(2)>p:first-child{
+	font-size: 0.32rem;
+	color: #db1218;
+	padding-bottom: 0.16rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+a.list-taocan-kuai>div:nth-of-type(2)>p:last-child{
+	font-size: 0.28rem;
+	color: #c0c0c0;
+	line-height: 0.36rem;
+	height: 0.72rem;
+	overflow: hidden;
+}
+a.list-taocan-kuai>div:nth-of-type(3)>span:nth-of-type(1){
+	color: #db1218;
+	font-size: 0.48rem;
+	float: right;
+}
+a.list-taocan-kuai>div:nth-of-type(3)>span:nth-of-type(2){
+	background-color: #8ad0e9;
+	color: white;
+	width: 1.84rem;
+	height: 0.5rem;
+	border-radius: 0.05rem;
+	font-size: 0.36rem;
+	line-height: 0.5rem;
+	text-align: center;
+	float: right;
+	margin: 0.1rem 0;
+}
+a.list-taocan-kuai>div:nth-of-type(3)>span:nth-of-type(3){
+	float: right;
+	font-size: 0.28rem;
+	color: #c0c0c0;
+}
+
+/*
+ * 
+ *底部热门推荐的部分 
+ * 
+ * */
+section.tj-remen-title{
+	font-size: 0.36rem;
+	text-align: center;
+	padding-bottom: 0.2rem;
+	color: #a5a5a5;
+}
+div.list-tj-remen{
+	padding: 0 0.23rem;
+}
+a.tj-remen-kuai{
+	width: 3.38rem;
+	padding: 0 0.07rem;
+	float: left;
+}
+a.tj-remen-kuai>img{
+	width: 3.38rem;
+	height: 2.2rem;
+	border-radius: 0.05rem;
+	box-shadow: 1px 1px 2px 1px rgba(0,0,0,.3);
+}
+a.tj-remen-kuai>p{
+	font-size: 0.28rem;
+	line-height: 0.58rem;
+	color: #a5a5a5;
+	text-align: center;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/*
+ * 
+ *登录注册表单的样式
+ * 公共样式 
+ * 
+ * 
+ * */
+.form-main{
+	width: 7.5rem;
+	padding: 0.76rem;
+	box-sizing: border-box;
+}
+.form-main>div{
+	overflow: hidden;
+	position: relative;
+}
+
+.form-main>div>.form-area-icon{
+	width: 0.84rem;
+	height: 0.92rem;
+	line-height: 0.92rem;
+	text-align: center;
+	background-color: #fdfdfd;
+    border: 1px solid #c9c7c8;
+    border-radius: 0.1rem 0 0 0.1rem;
+    border-right: none;
+    float: left;
+    box-sizing: border-box;
+}
+.form-main>div>.form-area-icon::before{
+	font-family: "icomoon";
+	font-size: 0.52rem;
+}
+.form-main>div.form-area-phone>.form-area-icon::before{
+	content: "\e91e";
+	color: #fa4b61;
+}
+.form-main>div.form-area-password>.form-area-icon::before{
+	content: "\e918";
+	color: #23bdbf;
+}
+.form-main>div.form-area-txyzm>.form-area-icon::before{
+	content: "\e912";
+	color: #df6710;
+}
+.form-main>div.form-area-dxyzm>.form-area-icon::before{
+	content: "\e905";
+	color: #b89835;
+}
+.form-main>div>input{
+	height: 0.92rem;
+	width: 5.08rem;
+	padding-left: 0.18rem;
+	background-color: #fdfdfd;
+    border: 1px solid #c9c7c8;
+    border-radius: 0 0.1rem 0.1rem 0;
+    font-size: 0.32rem;
+    float: left;
+    box-sizing: border-box;
+}
+.form-main>div.form-area-txyzm>input{
+	width: 3.02rem;
+}
+.form-main>div.form-area-dxyzm>input{
+	width: 3.02rem;
+}
+
+
+.form-main>div.form-area-dxyzm>.dxyzm,
+.form-main>div.form-area-dxyzm>.dxyzm-dis,
+.form-main>div.form-area-txyzm>.txyzm{
+	width: 1.7rem;
+	height: 0.69rem;
+	margin-left: 0.34rem;
+	margin-top: 0.2133rem;
+	float: left;
+	box-sizing: border-box;
+	text-align: center;
+	background-color: white;
+	cursor: pointer;
+}
+.form-main>div.form-area-dxyzm>.dxyzm{
+	border: 1px solid #f53149;
+	border-radius: 0.1rem;
+	color: #f53149;
+	font-size: 0.28rem;
+	line-height: 0.69rem;
+}
+.form-main>div.form-area-dxyzm>.dxyzm-dis{
+	border: 1px solid #e6e6e6;
+	border-radius: 0.1rem;
+	color: #ccc;
+	background-color: #f6f6f6;
+	font-size: 0.28rem;
+	line-height: 0.69rem;
+	display: none;
+}
+form.form-zc .form-area-dxyzm{
+	display: none;
+}
+
+.form-main>div.form-area-txyzm>.txyzm{
+    border: 1px solid #c9c7c8;
+}
+.txyzm>a{
+	width: 100%;
+	height: 100%;
+}
+.form-main>div.form-area-txyzm>.txyzm img{
+    width: 100%;
+    height: 100%;
+}
+
+a.form-submit{
+	width: 5.98rem;
+	height: 0.86rem;
+	margin: 0 auto;
+	line-height: 0.86rem;
+	text-align: center;
+	margin-top: 0.16rem;
+	background-color: #f53148;
+	border: none;
+	border-radius: 0.1rem;
+	font-size: 0.36rem;
+	color: white;
+	cursor: pointer;
+}
+
+.form-main>div>span{
+	position: absolute;
+	top: 0;
+	right: 0;
+	line-height: 0.92rem;
+	height: 0.92rem;
+	cursor: pointer;
+	display: none;
+}
+.form-main>div>span::before{
+	font-family: "icomoon";
+	font-size: 0.32rem;
+	padding: 0 0.26rem;
+	cursor: pointer;
+}
+.form-main>div>span.form-error-1::before{
+	color: #f0f0f0;
+	content: "\e908";
+}
+.form-main>div>span.form-error-2::before{
+	color: #f6304b;
+	content: "\e908";
+}
+.form-main>div>span.form-success::before{
+	color: #45ac29;
+	content: "\e921";
+}
+.form-main>div.form-area-dxyzm>span{
+	right: 1.94rem;
+}
+.form-main>div.form-area-txyzm>span{
+	right: 2.04rem;
+}
+
+p.tips {
+	color: #F63246;
+	text-indent: 0.84rem;
+	font-size: 0.28rem;
+	line-height: 0.6rem;
+	height: 0.6rem;
+	clear: both;
+}
+/*忘记密码等小文字*/
+.form-main>p.p-more{
+	padding-top: 0.24rem;
+	overflow: hidden;
+}
+.form-main>p.p-more>a{
+	font-size: 0.28rem;
+	color: #7f7f7f;
+}
+
+.form-main>p.p-more>a:first-child{
+	float: left;
+}
+
+.form-main>p.p-more>a:last-child{
+	float: right;
+}
+/*注册页面的协议等*/
+div.zhuce-xieyi{
+	text-align: center;
+	font-size: 0.26rem;
+	padding: 0.6rem 0;
+}
+div.zhuce-xieyi>a{
+	color: #72ACE3;
+}
+.form-main>div.zhuce-xieyi>input{
+	width: 0.27rem;
+	height: 0.27rem;
+	float: none;
+	margin-right: 0.2rem;
+	vertical-align: middle;
+}
+
+
+
+
+/*
+ * 
+ *第三方登录 
+ * 
+ * 
+ * 
+ * */
+.disanfang-fenge{
+	width: 7.5rem;
+	font-size: 0.3rem;
+	text-align: center;
+	margin-top: 0.34rem;
+}
+.disanfang-fenge::before,.disanfang-fenge::after{
+	content: "";
+	width: 2.7rem;
+	height: 1px;
+	background-color: #9c9c9c;
+	float: left;
+	padding-top: 0.15rem;
+	background-clip: content-box;
+}
+.disanfang-fenge::after{
+	float: right;
+}
+.disanfang-denglu{
+	padding: 0.5rem 0 0.65rem 1.65rem;
+	overflow: hidden;
+}
+.disanfang-denglu>a{
+	float: left;
+	/*width: 1.44rem;*/
+	width: 1.4rem;
+	text-align: center;
+}
+.disanfang-denglu>a:nth-of-type(1)>div:before{
+	font-family: "icomoon";
+font-size: 0.86rem;
+color: #43a0e5;
+content: "\e902";
+}
+.disanfang-denglu>a:nth-of-type(2)>div:before{
+	font-family: "icomoon";
+font-size: 0.86rem;
+color: #ef4949;
+content: "\e910";
+}
+.disanfang-denglu>a:nth-of-type(3)>div:before{
+	font-family: "icomoon";
+font-size: 0.86rem;
+color: #17b026;
+content: "\e925";
+}
+.disanfang-denglu>a>p{
+	font-size: 0.28rem;
+	padding-top: 0.12rem;
+	color: #9c9c9c;
+}
+
+/*
+ * 
+ * */
+div.zhmm-yx-content{
+	padding: 1.46rem 0 1.08rem 1.12rem;
+	overflow: hidden;
+}
+div.zhmm-yx-content>span,
+div.zhmm-yx-content>div{
+	float: left;
+}
+div.zhmm-yx-content>span::before{
+	font-family: "icomoon";
+font-size: 0.6rem;
+line-height: 0.64rem;
+color: #82c35b;
+content: "\e921";
+}
+div.zhmm-yx-content>div{
+	width: 5rem;
+	box-sizing: border-box;
+	padding-left: 0.3rem;
+}
+div.zhmm-yx-content>div>p{
+	font-size: 0.28rem;
+	line-height: 0.38rem;
+	color: #b3b3b3;
+}
+div.zhmm-yx-content>div>p:nth-of-type(1){
+	font-size: 0.36rem;
+	line-height: 0.64rem;
+	color: #565656;
+}
+/*
+ * 
+ * */
+p.zhmm-sj-content{
+	height: 1.47rem;
+	font-size: 0.36rem;
+	text-align: center;
+	box-sizing: border-box;
+	padding-top: 1.02rem;
+	color: #565656;
+}
+
+/*
+ * 
+ *nav的tab切换部分 
+ * 
+ * */
+nav.nav-tab{
+	overflow: hidden;
+	border-top: 1px solid #cbcbcb;
+	background-color: white;
+}
+nav.nav-tab.active-fixed{
+	position: fixed;
+	top: 0.96rem;
+	z-index: 97;
+}
+nav.nav-tab>span{
+	float: left;
+	font-size: 0.32rem;
+	color: #505050;
+	height: 0.8rem;
+	line-height: 0.8rem;
+	text-align: center;
+	border-bottom: 1px solid #cbcbcb;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+nav.nav-tab>span.tab-span-active{
+	color: #f53049;
+	border-bottom: 2px solid #f53049;
+}
+.nav-tab-3>span{
+	width: 2.5rem;
+}
+.nav-tab-4>span{
+	width: 1.875rem;
+}
+
+
+
+/*
+ * 
+ *商品信息，数量，支付金额
+ *公共样式 
+ * 
+ * 
+ * 
+ * */
+
+section[class^="xingqing-small-title-"]{
+	width: 7.5rem;
+	box-sizing: border-box;
+	background-color: #fcfafb;
+	/*padding-left: 0.225rem;*/
+	overflow: hidden;
+	border-top: 1px solid #d3d1d2;
+	border-bottom: 1px solid #d3d1d2;
+	margin-top: 0.2rem;
+}
+section[class^="xingqing-small-title-"].hide{
+	display: none;
+}
+section[class^="xingqing-small-title-"]>span{
+	float: left;
+	line-height: 0.7rem;
+	font-size: 0.32rem;
+	color: #505050;
+	box-sizing: border-box;
+}
+section.xingqing-small-title-dingdan>span:nth-of-type(1){
+	width: 3.68rem;
+	padding-left: 0.34rem;
+}
+section.xingqing-small-title-shoucang>span:nth-of-type(1){
+	width: 4.1rem;
+	padding-left: 0.34rem;
+}
+section[class^="xingqing-small-title-"]>span.span-sl{
+	width: 1.91rem;
+	text-align: center;
+}
+section[class^="xingqing-small-title-"]>span.span-zfje{
+	width: 1.91rem;
+	text-align: center;
+}
+section[class^="xingqing-small-title-"]>span.span-scsj{
+	width: 2.05rem;
+	text-align: center;
+}
+section[class^="xingqing-small-title-"]>span.span-caozuo{
+	padding-left: 0.16rem;
+	text-align: center;
+}
+
+
+
+
+/*
+ * 
+ * 
+ *订单，收藏等的详情模板
+ * 公共样式
+ * 
+ * 
+ * */
+
+section.xiangqing-box{
+	border-bottom: 1px solid #d3d1d2;
+	width: 7.5rem;
+	height: 3.16rem;
+	font-size: 0.28rem;
+	overflow: hidden;
+}
+section.xiangqing-box>div:nth-of-type(1){
+	float: left;
+	box-sizing: border-box;
+	color: #828282;
+	width: 3.68rem;
+	padding-left: 0.34rem;
+}
+section.xiangqing-box>div:nth-of-type(1)>p:nth-of-type(1){
+	line-height: 0.68rem;
+}
+section.xiangqing-box>div:nth-of-type(1)>p:nth-of-type(2){
+	width: 2.8rem;
+	line-height: 0.4rem;
+	height: 0.8rem;
+	overflow: hidden;
+}
+section.xiangqing-box>div:nth-of-type(1)>img{
+	display: block;
+	width: 2.5rem;
+	height: 1.5rem;
+}
+section.xiangqing-box>div:nth-of-type(2){
+	float: left;
+	box-sizing: border-box;
+	width: 3.82rem;
+}
+section.xiangqing-box>div:nth-of-type(2)>p:nth-of-type(1){
+	height: 2.02rem;
+}
+section.xiangqing-box>div:nth-of-type(2)>p:nth-of-type(1)>span{
+	float: left;
+	width: 1.91rem;
+	text-align: center;
+	line-height: 2.02rem;
+}
+section.xiangqing-box>div:nth-of-type(2)>p:nth-of-type(1)>span:nth-of-type(1){
+	font-size: 0.36rem;
+	color: #505050;
+}
+section.xiangqing-box>div:nth-of-type(2)>p:nth-of-type(1)>span:nth-of-type(2){
+	font-size: 0.4rem;
+	color: #f44c4b;
+}
+section.xiangqing-box>div:nth-of-type(2)>p:nth-of-type(2){
+	padding: 0 0.11rem;
+	overflow: hidden;
+}
+section.xiangqing-box>div:nth-of-type(2)>p:nth-of-type(2)>a{
+	float: left;
+	width: 1.34rem;
+	height: 0.54rem;
+	line-height: 0.54rem;
+	margin: 0.3rem 0.2rem;/*左右margin 0.23rem时，会出现浏览器兼容性问题*/
+	text-align: center;
+	border-radius: 0.2rem;
+	color: white;
+}
+section.xiangqing-box>div:nth-of-type(2)>p:nth-of-type(2)>a.btn-qx-dingdan{
+	background-color: #bfbdbe;
+}
+section.xiangqing-box>div:nth-of-type(2)>p:nth-of-type(2)>a.btn-qzf-dingdan{
+	background-color: #f44c4c;
+}
+section.xiangqing-box>div:nth-of-type(2)>p:nth-of-type(2)>a.btn-single-dingdan{
+	background-color: #bfbdbe;
+	margin: 0.3rem 1.13rem;
+}
+
+div.wode-wodedingdan-content>div+div {
+    display: none;
+}
+
+
+
+
+
+/*
+ * 
+ * 
+ * 
+ *修改密码页面，样式较多 
+ * 
+ * 
+ * 
+ * */
+div.wode-xiugaimima-content{
+	box-sizing: border-box;
+	width: 7.5rem;
+	padding-left: 0.56rem;
+	padding-top: 0.28rem;
+	padding-bottom: 0.28rem;
+	background-color: white;
+	border-top: 1px solid #d3d1d2;
+	border-bottom: 1px solid #d3d1d2;
+	margin-top: 0.1rem;
+}
+div.wode-xiugaimima-content>section{
+	line-height: 0.63rem;
+	font-size: 0.32rem;
+	overflow: hidden;
+}
+
+div.wode-xiugaimima-content>section>div{
+	width: 1.54rem;
+	color: #505050;
+	float: left;
+}
+div.wode-xiugaimima-content>section>div>span{
+	padding-left: 1em;
+}
+
+div.wode-xiugaimima-content>section>span {
+	width: 2.85rem;
+	color: #f95353;
+	float: left;
+}
+div.wode-xiugaimima-content>section>span.wode-xiugaimima-yonghuming {
+	color: #505050;
+}
+
+/*
+ * 
+ *绑定-手机 ,修改密码等
+ * 
+ * 
+ * */
+
+div.bangding{
+	overflow: hidden;
+	background-color: white;
+	width: 7.5rem;
+	height: 100%;
+	z-index: 9;
+}
+div.bangding>div{
+	width: 6.5rem;
+	border-left: 1px solid #e0e0e0;
+	border-right: 1px solid #e0e0e0;
+	background-color: white;
+	margin: 0.5rem auto 0;
+}
+div.bangding-top,
+div.bangding-bottom {
+	height: 0.8rem;
+	line-height: 0.8rem;
+	font-size: 0.32rem;
+	padding-left: 1em;
+	color: #505050;
+	background-color: #ececec;
+	overflow: hidden;
+	border-top: 1px solid #e0e0e0;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+
+div.bangding p{
+	line-height: 0.9rem;
+	font-size: 0.28rem;
+	overflow: hidden;
+}
+p.bangding-p-1>span{
+	width: 2.1rem;
+	padding-right: 0.3rem;
+	float: left;
+	text-align: right;
+}
+p.bangding-p-1>input{
+	width: 3rem;
+	background-color: #f0f0f0;
+	height: 0.6rem;
+	border: none;
+	border-radius: 0.08rem;
+	margin-top: 0.15rem;
+	float: left;
+}
+p.bangding-p-2>span:nth-of-type(1){
+	width: 2.1rem;
+	padding-right: 0.3rem;
+	float: left;
+	text-align: right;
+}
+p.bangding-p-2>input{
+	width: 1.3rem;
+	background-color: #f0f0f0;
+	height: 0.6rem;
+	border: none;
+	border-radius: 0.08rem;
+	float: left;
+	margin-top: 0.15rem;
+}
+p.bangding-p-2>span:nth-of-type(2){
+	display: inline-block;
+	width: 1.4rem;
+	height: 0.6rem;
+	line-height: 0.6rem;
+	margin-left: 0.3rem;
+	background-color: #ee7e7d;
+	color: white;
+	border-radius: 0.08rem;
+	font-size: 0.24rem;
+	text-align: center;
+	margin-top: 0.15rem;
+	float: left;
+}
+p.bangding-p-2>span.txyzm{
+	background-color: white;
+	border: 1px solid #c9c7c8;
+}
+p.bangding-p-2>span.txyzm img{
+	width: 100%;
+	height: 100%;
+}
+p.bangding-p-3>span:nth-of-type(1){
+	width: 2.1rem;
+	padding-right: 0.3rem;
+	float: left;
+	text-align: right;
+}
+p.bangding-p-3>span:nth-of-type(2){
+	float: left;
+}
+
+div.bangding-top{
+	margin-bottom: 0.3rem;
+}
+
+div.bangding-bottom{
+	margin-top: 0.3rem;
+	/*margin-bottom: 0.4rem;*/
+	padding-top: 0.15rem;
+	box-sizing: border-box;
+	position: relative;
+}
+
+div.bangding-bottom>span{
+	float: right;
+	width: 1.2rem;
+	height: 0.5rem;
+	text-align: center;
+	line-height: 0.5rem;
+	cursor: pointer;
+}
+div.bangding-bottom>span.bangding-queding{
+	background-color: #b8d2f5;
+}
+div.bangding-bottom>span.bangding-quxiao{
+}
+
+div.bangding input[type='submit']{
+	position: absolute;
+	width: 1.2rem;
+	height: 0.8rem;
+	right: 1.2rem;
+	bottom: 0;
+	opacity: 0;
+}
+
+div.bangding-yiwancheng {
+	text-align: center;
+	color: #878787;
+	background-color: #f0f0f0;
+	line-height: 0.9rem;
+	width: 6.4rem;
+	margin: 0 auto;
+	font-size: 0.32rem;
+	margin-top: 0.8rem;
+	display: none;
+}
+
+
+
+/*
+ * 
+ *验证码弹框部分 
+ * 
+ * 
+ * 
+ * */
+div.yanzhengma-mask{
+	position: fixed;
+	z-index: 99;
+	width: 7.5rem;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.5);
+	display: none;
+}
+
+div.area-yanzhengma{
+	background-color: #f0f0f0;
+	padding: 0.9rem 0.225rem 0.225rem;
+	position: fixed;
+	box-sizing: border-box;
+	border-radius: 0.15rem;
+	width: 6rem;
+	top: 50%;
+	left: 50%;
+	margin-left: -3rem;
+	/*display: none;*/
+}
+div.area-yanzhengma>input{
+	float: left;
+	width: 2.85rem;
+	height: 0.75rem;
+	font-size: 0.3rem;
+	margin-right: 0.15rem;
+	border-radius: 0.075rem;
+	border:1px solid #e1e1e1;
+	text-indent: 0.15rem;
+}
+div.area-yanzhengma>div.yanzhengma-pic{
+	float: left;
+	width: 1.35rem;
+	height: 0.75rem;
+	/*background-color: orange;*/
+	border:1px solid #e1e1e1;
+}
+div.area-yanzhengma>span.huanyizhang{
+	float: right;
+	font-size: 0.3rem;
+	padding-top: 0.45rem;
+}
+div.area-yanzhengma>span.yanzhengma-guanbi::before{
+	position: absolute;
+	font-family: "icomoon";
+	font-size: 0.525rem;
+	content: "\e920";
+	color: #909090;
+	padding: 0.15rem;
+	top: 0;
+	right: 0;
+}
+div.area-yanzhengma>div.yanzhengma-queding{
+	float: left;
+	width: 2.25rem;
+	line-height: 0.75rem;
+	font-size: 0.32rem;
+	text-align: center;
+	margin-top: 0.375rem;
+	margin-left: 1.65rem;
+	border-radius: 0.375rem;
+	background-color: #F53049;
+}

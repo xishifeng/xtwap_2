@@ -1,0 +1,68 @@
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name='apple-touch-fullscreen' content='yes'>
+		<meta name="full-screen" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta property="qh.webmaster" content="533ce078be281" />
+		<title>全国婚纱摄影团购 全国婚纱照团购 儿童摄影/孕妇照/艺术照团购网站-全国喜团网</title>
+		<meta name="keywords" content="全国婚纱摄影，全国婚纱照，全国婚纱摄影团购，全国婚纱照团购" />
+		<meta name="description" content="喜团网汇聚全国婚纱摄影团购，全国婚纱照团购摄影工作室信息，全国喜团网你呈现最优质的婚纱摄影/婚纱照/孕妇照/艺术照服务。" />
+		<script type="text/javascript" src="js/flexible0-3-4.js"></script>
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/main.css" />
+	</head>
+
+	<body>
+		<!--header-->
+		<header>
+			<a class="header-back" href="javascript:history.back();"></a>
+			<span class="header-title">我的收藏</span>
+			<a href="index.html" class="header-icon-right header-home"></a>
+		</header>
+		<!--/header-->
+
+		<section class="xingqing-small-title-shoucang"><span id="wode-wodeshoucang-bar-spxx-span">商品信息</span><span class="span-scsj">收藏时间</span><span class="span-caozuo">操作</span></section>
+
+		<!--商品信息部分-->
+		<div class="wode-wodeshoucang-content">
+			<div oid="54321">
+				<span class="shoucang-detail">
+					<div><img src="img/temp/wodedingdan.jpg" /></div>
+					<p>【石龙镇】石龙钟爱一生视觉摄影工作室《石龙<!--》--></p>
+				</span>
+				<span class="shoucang-detail">2016-10-28</span>
+				<span class="wodeshoucang-qxsc">取消收藏</span>
+			</div>
+			<div oid="54321">
+				<span class="shoucang-detail">
+					<div><img src="img/temp/wodedingdan.jpg" /></div>
+					<p>【石龙镇】石龙钟爱一生视觉摄影工作室《石龙<!--》--></p>
+				</span>
+				<span class="shoucang-detail">2016-10-28</span>
+				<span class="wodeshoucang-qxsc">取消收藏</span>
+			</div>
+		</div>
+		<!--/商品信息部分-->
+
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$(document).on("click", ".shoucang-detail", function() {
+					window.location.href = "shangpinxinxi.html" + "?oid=" + $(this).parent().attr("oid");
+				});
+
+				//我的收藏-取消收藏
+				$("span.wodeshoucang-qxsc").click(function() {
+					$(this).parent().hide("slow");
+				});
+			})
+		</script>
+	</body>
+
+</html>

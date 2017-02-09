@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name='apple-touch-fullscreen' content='yes'>
+		<meta name="full-screen" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta property="qh.webmaster" content="533ce078be281" />
+		<title>全国婚纱摄影团购 全国婚纱照团购 儿童摄影/孕妇照/艺术照团购网站-全国喜团网</title>
+		<meta name="keywords" content="全国婚纱摄影，全国婚纱照，全国婚纱摄影团购，全国婚纱照团购" />
+		<meta name="description" content="喜团网汇聚全国婚纱摄影团购，全国婚纱照团购摄影工作室信息，全国喜团网你呈现最优质的婚纱摄影/婚纱照/孕妇照/艺术照服务。" />
+		<script type="text/javascript" src="js/flexible0-3-4.js"></script>
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/layer.min.css" />
+	</head>
+
+	<body>
+		<!--header-->
+		<header class="zcdl-header">
+			<a class="header-back" href="javascript:(history.length>1?history.go(-1):window.location='/');"></a>
+			<span class="header-title">注册帐号</span>
+			<a class="header-text-right" href="denglu.html">登录</a>
+		</header>
+		<!--/header-->
+
+		<!--登录区域-->
+		<form class="form-main form-zc" action="" method="post">
+			<div class="form-area-phone">
+				<div class="form-area-icon"></div>
+				<input type="text" placeholder="手机/邮箱号" name="" id="phone-num" />
+				<span></span>
+				<p class="tips"></p>
+			</div>
+
+			<div class="form-area-password">
+				<div class="form-area-icon"></div>
+				<input type="password" placeholder="输入6-20位密码" maxlength="20" name="" id="pwd1" />
+				<span></span>
+				<p class="tips"></p>
+			</div>
+
+			<div class="form-area-password">
+				<div class="form-area-icon"></div>
+				<input type="password" placeholder="请再次输入密码" maxlength="20" name="" id="pwd2" />
+				<span></span>
+				<p class="tips"></p>
+			</div>
+
+			<div class="form-area-txyzm">
+				<div class="form-area-icon"></div>
+				<input type="text" placeholder="输入图形验证码" name="zc-tx-yzm" id="zc-tx-yzm" maxlength="4">
+				<div class="txyzm"><img src="img/temp/yanzhengma.jpg" /></div>
+				<span></span>
+				<p class="tips"></p>
+			</div>
+
+			<div class="form-area-dxyzm">
+				<div class="form-area-icon"></div>
+				<input type="text" placeholder="输入短信验证码" name="dxyz-dx-yzm" id="dxyz-dx-yzm" maxlength="6">
+				<div class="dxyzm">获取验证码</div>
+				<div class="dxyzm-dis"><span>60</span>s</div>
+				<span></span>
+				<p class="tips"></p>
+			</div>
+
+			<a href="javascript:;" class="form-submit">注 册</a>
+			<div class="zhuce-xieyi"><input id="agree" type="checkbox" checked="checked" />我已阅读并同意
+				<a href="yonghuxieyi.html" class="a-inline">《喜团网用户使用协议书》</a>
+			</div>
+
+		</form>
+		<!--、登录区域-->
+
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/layer.min.js"></script>
+		<script type="text/javascript">
+			$(document).on("click", ".dxyzm", function() {
+				var _this = $(this),
+					_dis = _this.nextAll(".dxyzm-dis"),
+					timeSpan = $(".dxyzm-dis>span"),
+					_time = 60;
+				timeSpan.text(_time);
+
+				_dis.show();
+				_this.hide();
+				timeId = setInterval(function() {
+					if(_time) {
+						timeSpan.text(_time);
+						_time--;
+					} else {
+						clearInterval(timeId);
+						_dis.hide();
+						_this.show();
+					}
+				}, 1000);
+			});
+
+			$(document).ready(function() {
+				$("input").focus(function() {
+					var nextSpan = $(this).nextAll("span");
+					nextSpan.show().removeClass().addClass("form-error-1");
+				});
+
+				$(document).on("click", ".form-error-1", function() {
+					$(this).nextAll(".tips").text("");
+					resetInput($(this));
+				});
+				$(document).on("click", ".form-error-2", function() {
+					$(this).nextAll(".tips").text("");
+					resetInput($(this));
+				});
+
+				$("#phone-num").blur(function() {
+					var _this = $(this);
+					setTimeout(function() {
+						var pn = _this.val();
+						if(pn !== "") {
+							//ajax相关操作
+							if(/^1[34578]\d{9}$/.test(pn) || /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/.test(pn)) {
+								if(1) {
+									//手机号/邮箱正确,且没有注册过
+									_this.nextAll(".tips").text("");
+									_this.nextAll("span").removeClass().addClass("form-success");
+								} else {
+									//手机号/邮箱正确,但已经注册过
+									_this.nextAll(".tips").text("改号码已被注册过");
+									_this.nextAll("span").removeClass().addClass("form-error-2");
+								}
+							} else {
+								//手机号/邮箱不正确
+								_this.nextAll(".tips").text("请输入正确的手机号/邮箱");
+								_this.nextAll("span").removeClass().addClass("form-error-2");
+							}
+						}
+					}, 200)
+				});
+
+				$("#pwd1").blur(function() {
+					var _this = $(this);
+					setTimeout(function() {
+						var pwd1 = _this.val();
+						if(pwd1 !== "") {
+							//ajax相关操作
+							if(pwd1.length < 6) {
+								//密码长度不够，小于20写在html里
+								_this.nextAll(".tips").text("密码长度不够");
+								_this.nextAll("span").removeClass().addClass("form-error-2");
+							} else {
+								//密码长度够，小于20写在html里
+								_this.nextAll(".tips").text("");
+								_this.nextAll("span").removeClass().addClass("form-success");
+							}
+							$("#pwd2").val("").nextAll("span").removeClass();
+						}
+					}, 200)
+				});
+
+				$("#pwd2").blur(function() {
+					var _this = $(this);
+					setTimeout(function() {
+						var pwd2 = _this.val();
+						if(pwd2 !== "") {
+							//ajax相关操作
+							var pwd1 = $("#pwd1").val();
+							if(pwd2.length >= 6 && pwd2 == pwd1) {
+								_this.nextAll(".tips").text("");
+								_this.nextAll("span").removeClass().addClass("form-success");
+							} else {
+								_this.nextAll(".tips").text("请输入正确的确认密码");
+								_this.nextAll("span").removeClass().addClass("form-error-2");
+							}
+						}
+					}, 200)
+				});
+
+				$("#zc-tx-yzm").blur(function() {
+					var _this = $(this);
+					setTimeout(function() {
+						var txyzm = _this.val();
+						if(txyzm !== "") {
+							//ajax相关操作
+							if(1) {
+								_this.nextAll(".tips").text("");
+								_this.nextAll("span").removeClass().addClass("form-success");
+							} else {
+								_this.nextAll(".tips").text("验证码不正确");
+								_this.nextAll("span").removeClass().addClass("form-error-2");
+							}
+						}
+					}, 200)
+				});
+
+				$(".form-submit").click(function(e) {
+					e.preventDefault();
+					var _phone = $("#phone-num"),
+						_pwd1 = $("#pwd1"),
+						_pwd2 = $("#pwd2"),
+						_txYzm = $("#zc-tx-yzm");
+
+					_phone.blur();
+					_pwd2.blur();
+					_txYzm.blur();
+
+					var a = _phone.nextAll("span").hasClass("form-success"),
+						b = _pwd1.nextAll("span").hasClass("form-success"),
+						c = _pwd2.nextAll("span").hasClass("form-success"),
+						d = _txYzm.nextAll("span").hasClass("form-success");
+					if(a && b && c && d) {
+						if(/^1[34578]\d{9}$/.test(_phone.val())) {
+							if(1) {
+								//手机登录,验证码正确
+							} else {
+								//手机登录,验证码错误
+								layer.alert("信息填写错误");
+							}
+						}
+						if(/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/.test(_phone.val())) {
+							//邮箱正确
+						}
+					} else {
+						layer.alert("信息填写错误");
+					}
+				});
+				
+				$("#agree").click(function(){
+					var _agree = $(this);
+					_agree.blur();
+   					_agree.focus();
+   					if(!_agree.is(':checked')){
+   						submit_btn.hide();
+   					}else{
+   						submit_btn.show();
+   					}
+				});
+			});
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name='apple-touch-fullscreen' content='yes'>
+		<meta name="full-screen" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta property="qh.webmaster" content="533ce078be281" />
+		<title>订单支付_喜团网</title>
+		<meta name="keywords" content="全国婚纱摄影，全国婚纱照，全国婚纱摄影团购，全国婚纱照团购" />
+		<meta name="description" content="喜团网汇聚全国婚纱摄影团购，全国婚纱照团购摄影工作室信息，全国喜团网你呈现最优质的婚纱摄影/婚纱照/孕妇照/艺术照服务。" />
+		<!--<script type="text/javascript" src="http://wapcdn.xituan.com/js/jquery.min.js?gv=1_1"></script>-->
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<!--<script type="text/javascript" src="http://wapcdn.xituan.com/js/flexible0-3-4.js?gv=1_1"></script>-->
+		<script type="text/javascript" src="js/flexible0-3-4.js" ></script>
+		<!--<script type="text/javascript" src="http://wapcdn.xituan.com/js/common.js?gv=1_3"></script>-->
+		<!--<link href="http://wapcdn.xituan.com/css/public.css?gv=8_3" rel="stylesheet" type="text/css" />-->
+		<link rel="stylesheet" href="css/public.css" />
+		<!--<link href="http://wapcdn.xituan.com/css/swiper.min.css?gv=8_1" rel="stylesheet" type="text/css" />-->
+		<!--<script type="text/javascript" src="http://wapcdn.xituan.com/js/layer.min.js?gv=1_3"></script>-->
+		<!--<link href="http://wapcdn.xituan.com/css/main.css?gv=8_2" rel="stylesheet" type="text/css" />-->
+		<link rel="stylesheet" href="css/main.css" />
+		<!--<link href="http://wapcdn.xituan.com/css/layer.min.css?gv=8_1" rel="stylesheet" type="text/css" />-->
+		<!--<script type="text/javascript" src="http://wapcdn.xituan.com/js/main.js?gv=1_1"></script>-->
+		<script type="text/javascript">
+			imgUri = "http://img.xituan.com/";
+		</script>
+	</head>
+
+	<body>
+		<div class="jia jia-weideng">
+			<a class="jia-zc" href="/account/Register">注册</a>
+			<a class="jia-dl" href="/account/Login">登录</a>
+			<a class="jia-sys" href="javascript:;" id="erweima-show">扫一扫</a>
+		</div>
+		<div class="jia jia-yideng">
+			<a class="jia-dl jia-grzx" href="/account/Index">个人中心</a>
+			<a class="jia-sys" href="javascript:;" id="erweima-show">扫一扫</a>
+		</div>
+		<div class="erweima-lg"><img src="http://wapcdn.xituan.com/img/ewm.png" class="ab-center" /></div>
+		<script type="text/javascript">
+			function dengLu() {
+				return true;
+			}
+		</script>
+		<!--header-->
+		<header class="zcdl-header">
+			<a class="header-back" href="javascript:(history.length>1?history.go(-1):window.location='/');"></a>
+			<span class="header-title">商品信息</span>
+			<span class="header-icon-right header-mulu"></span>
+		</header>
+		<!--/header-->
+
+		<style type="text/css">
+			.content-1 {
+				padding-top: 0.15rem;
+				padding-left: 0.15rem;
+				padding-right: 0.15rem;
+			}
+			
+			.content-1 .huihua1 {
+				background-color: #e5e5e5;
+				border-radius: 0.1rem;
+				overflow: hidden;
+				border: 1px solid #8e8c8d;
+				font-size: 0.28rem;
+			}
+			
+			.content-1 .huihua1 div {
+				box-sizing: border-box;
+				float: left;
+			}
+			
+			.content-1 .huihua1>div:first-child {
+				width: 5.4rem;
+				padding: 0.15rem;
+			}
+			
+			.content-1 .huihua1>div:first-child p {
+				color: #747474;
+				font-family: "微软雅黑";
+				overflow: hidden;
+			}
+			
+			.content-1 .huihua1>div:first-child p:first-child {
+				padding-bottom: 0.1rem;
+			}
+			
+			.content-1 .huihua1>div:first-child p>span:first-child {
+				float: left;
+			}
+			
+			.content-1 .huihua1>div:first-child p>span:last-child {
+				float: right;
+				padding-right: 0.05rem;
+			}
+			
+			.content-1 .huihua1>div:last-child {
+				width: 1.6rem;
+				font-family: "微软雅黑";
+				color: #e95850;
+				text-align: center;
+				font-size: 0.32rem;
+				height: 1.24rem;
+				position: relative;
+				top: 0.4rem;
+				right: 0;
+			}
+			
+			.content-1 .huihua1>div:last-child span {
+				font-size: 0.36rem;
+			}
+			
+			.content-1 .erweima {
+				width: 3.7rem;
+				margin: 0px auto;
+				height: 3.7rem;
+				margin-top: 0.4rem;
+				box-sizing: border-box;
+				border-radius: 0.02rem;
+				position: relative;
+				z-index: 98;
+				-webkit-user-select: none;
+			}
+			.content-1 .erweima>canvas{
+				width: 100%;
+				height: 100%;
+			}
+			
+			.content-1 .changan {
+				width: 3.7rem;
+				margin: 0.4rem auto 0.4rem;
+				height: 0.76rem;
+				background-color: #e95850;
+				font: 0.28rem/0.76rem "微软雅黑";
+				color: white;
+				border-radius: 0.1rem;
+				padding: 0px 0.05rem;
+				text-align: center;
+			}
+			
+			.content-1 .qrcode_flush {
+				width: 6rem;
+				margin: 0.15rem auto 0.2rem;
+				height: 0.38rem;
+				text-align: center;
+				font-size: 0.28rem;
+			}
+		</style>
+		<div class="cart-pay-box clearfix" id="pay_info">
+			<div class="body bg-common order-check">
+				<div class="content-1">
+					<div class="huihua1">
+						<div>
+							<p><span>下单人信息：wt43yt</span> <span>订单号：62766</span></p>
+							<p>商品名称：三亚蓝色影像婚纱摄影,《5天4晚超级优惠蜜月旅游一条龙》套系仅需5999元（x1）</p>
+						</div>
+						<div>应付金额<br /><span>5999</span>元</div>
+					</div>
+					<div class="erweima"></div>
+					<div class="changan">扫描或长按二维码进行支付 </div>
+					<div class="qrcode_flush">二维码过期或支付成功请
+						<a href="" class="a-inline" style="color:blue;">刷新</a>页面</div>
+				</div>
+			</div>
+			<div id="qrcode"></div>
+		</div>
+		<!--<script type="text/javascript" src="http://xtcdn.xituan.com/js/lib/jquery.qrcode.min.js?gv=3_1"></script>-->
+		<script type="text/javascript" src="js/jquery.qrcode.min.js" ></script>
+		<script type="text/javascript">
+			$(".erweima").qrcode({
+				render: "canvas",
+				width: 370,
+				height: 370,
+				text: "weixin://wxpay/bizpayurl?pr=FarYXic"
+			});
+		</script>
+
+	</body>
+
+</html>
